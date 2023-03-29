@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+  <title>Predict Score</title>
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/scorepredict.css')}}">
+	
+</head>
+ 
+  <body>
+    <div class="img" style="background-image: url({{ url_for('static', filename='images/img.jpeg')}})"></div>
+    <h1> IPL 1st innings score predictor</h1>
+ <form action="\predict" method="post"> 
+  <div class="inputs">
+
+  <h2 class="textstyle">Batting team : <select class="selectbox" name="bat_team" required>
+     <option value="" disabled selected hidden>Select team</option>
+    <option value="Chennai Super Kings">Chennai Super Kings</option>
+    <option value="Delhi Capitals">Delhi Capitals</option>
+    <option value="Punjab Kings">Punjab Kings</option>
+    <option value="Kolkatha knight Kiders">Kolkatha knight Kiders</option>
+    <option value="Mumbai Indians">Mumbai Indians</option>
+    <option value="Rajasthan Royals">Rajasthan Royals</option>
+    <option value="Royal challangers Banglore">Royal challangers Banglore</option>
+    <option value="Sun Risers Hyderbad">Sun Risers Hyderbad</option>
+  </select><br><br>
+
+   Bowling team : <select class="selectbox" name="bowl_team" required>
+     <option value="" disabled selected hidden>Select team</option>
+    <option value="Chennai Super Kings">Chennai Super Kings</option>
+    <option value="Delhi Capitals">Delhi Capitals</option>
+    <option value="Punjab Kings">Punjab Kings</option>
+    <option value="Kolkatha knight Kiders">Kolkatha knight Kiders</option>
+    <option value="Mumbai Indians">Mumbai Indians</option>
+    <option value="Rajasthan Royals">Rajasthan Royals</option>
+    <option value="Royal challangers Banglore">Royal challangers Banglore</option>
+    <option value="Sun Risers Hyderbad">Sun Risers Hyderbad</option>
+  </select><br><br>
+   Venue : <select class="selectbox" name="venue" required>
+    <option value="" disabled selected hidden>Select venue</option>
+    <option value=" Rajasekhara Reddy vizag">Dr. Y.S. Rajasekhara Reddy, vizag.</option>
+    <option value="Dubai International Cricket Stadium">Dubai International Cricket Stadium, UAE.</option>
+    <option value="Eden Gardens">Eden Gardens, Kolkatha.</option>
+    <option value="Feroz Shah Kotla">Feroz Shah Kotla, Delhi.</option>
+    <option value="M Chinnaswamy Stadium">M Chinnaswamy Stadium, Benguluru.</option>
+    <option value="Chidambaram Stadium Chepauk">Chidambaram Stadium, Chepauk.</option>
+    <option value="IS Bindra Stadium Mohali">IS Bindra Stadium, Mohali, Punjab.</option>
+    <option value="Rajiv Gandhi International Stadium Uppal">Rajiv Gandhi International Stadium, Hyderbad.</option>
+    <option value="Sawai Mansingh Stadium">Sawai Mansingh Stadium, Rajasthan.</option>
+    <option value="Sharjah Cricket Stadium">Sharjah Cricket Stadium, UAE.</option>
+    <option value="Sheikh Zayed Stadium">Sheikh Zayed Stadium, UAE.</option>
+    <option value="Wankhede Stadium">Wankhede Stadium, Mumbai.</option>
+    <option value="">NONE</option>
+  </select><br><br>
+
+  Current score :
+  <input type="text" class="textbox" name="runs"  required><br><br>
+  Wickets fallen :
+  <input type="text" class="textbox" name="wickets"  required><br><br>
+  Current Over :
+  <input type="text" class="textbox" name="overs"  required><br><br>
+  Runs in last 5 overs :
+  <input type="text" class="textbox" name="runs_last_5"  required><br><br>
+  Wickets in last 5 overs :
+  <input type="text" class="textbox" name="wickets_last_5"  required><br>
+</h3>s
+  
+  <input type="submit" class="predictbutton" value="Predict Score">
+</form>
+
+      <br><br><h3>{{ prediction_texts }}</h3>
+  </div>
+
+  </body>
+</html>
